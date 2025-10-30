@@ -1,0 +1,171 @@
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --blue-500: hsl(215, 51%, 70%);
+  --cyan-400: hsl(178, 100%, 50%);
+
+  --blue-950: hsl(217, 54%, 11%);
+  --blue-900: hsl(216, 50%, 16%);
+  --blue-800: hsl(215, 32%, 27%);
+  --white: hsl(0, 0%, 100%);
+}
+
+body {
+  font-family: "Outfit", sans-serif;
+  background-color: var(--blue-950);
+  height: 100dvh;
+
+  display: grid;
+  align-items: center;
+  justify-content: center;
+}
+
+main {
+  background-color: var(--blue-900);
+  width: clamp(200px, 85dvw, 350px);
+  padding: 1rem;
+  border-radius: 10px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+#illustration-container {
+  position: relative;
+  cursor: pointer;
+  display: flex; /* Eliminate extra white space due to img */
+  border-radius: 10px;
+
+  &:hover {
+    #overlay,
+    #eye {
+      visibility: visible;
+    }
+  }
+}
+
+#illustration {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+
+  border-radius: 10px;
+}
+
+#eye {
+  visibility: hidden;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+#overlay {
+  visibility: hidden;
+  position: absolute;
+  opacity: 0.5;
+  height: 100%;
+  width: 100%;
+  background-color: var(--cyan-400);
+  border-radius: 10px;
+}
+
+h1 {
+  color: var(--white);
+  font-size: 1.2rem;
+  font-weight: 500;
+  cursor: pointer;
+
+  &:hover {
+    color: var(--cyan-400);
+  }
+}
+
+p {
+  color: var(--blue-500);
+  font-size: 0.875rem;
+}
+
+#info {
+  display: flex;
+  justify-content: space-between;
+
+  > div {
+    display: flex;
+    align-items: center;
+    column-gap: 0.3rem;
+  }
+}
+
+#price {
+  > img {
+    width: 8px;
+  }
+
+  > span {
+    color: var(--cyan-400);
+    font-size: 0.8rem;
+  }
+}
+
+#time {
+  > img {
+    width: 14px;
+  }
+
+  > span {
+    color: var(--blue-500);
+    font-size: 0.8rem;
+  }
+}
+
+hr {
+  border: 0.5px solid var(--blue-800);
+}
+
+#author {
+  display: flex;
+  align-items: center;
+  column-gap: 0.75rem;
+
+  > img {
+    width: 30px;
+    height: 30px;
+    border: 1px solid var(--white);
+    border-radius: 50%;
+  }
+
+  > span {
+    color: var(--white);
+    font-size: 0.875rem;
+    cursor: pointer;
+
+    > span {
+      color: var(--blue-500);
+    }
+
+    &:hover {
+      color: var(--cyan-400);
+    }
+  }
+}
+
+.attribution {
+  position: absolute;
+  bottom: 10px;
+  right: 50%;
+  translate: 50%;
+  font-size: 11px;
+  text-align: center;
+  color: white;
+}
+
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
