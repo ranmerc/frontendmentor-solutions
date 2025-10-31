@@ -1,0 +1,223 @@
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  /* Primary */
+  --light-red: 0 100% 67%;
+  --orangey-yellow: 39 100% 56%;
+  --green-teal: 166 100% 37%;
+  --cobalt-blue: 234 85% 45%;
+
+  /* Gradients */
+  --light-slate-blue: hsl(252, 100%, 67%);
+  --light-royal-blue: hsl(241, 81%, 54%);
+  --violet-blue: hsla(256, 72%, 46%, 1);
+  --persian-blue: hsla(241, 72%, 46%, 0);
+
+  /* Neutral */
+  --white: hsl(0, 0%, 100%);
+  --pale-blue: hsl(221, 100%, 96%);
+  --light-lavender: hsl(241, 100%, 89%);
+  --dark-gray-blue: hsl(224, 30%, 27%);
+}
+
+body {
+  font-family: "Hanken Grotesk", sans-serif;
+
+  @media (min-width: 700px) {
+    height: 100dvh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--pale-blue);
+  }
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  row-gap: 1rem;
+
+  @media (min-width: 700px) {
+    flex-direction: row;
+  }
+}
+
+#card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  row-gap: 1rem;
+  padding: 1.5rem;
+  background-image: linear-gradient(
+    to bottom,
+    var(--light-slate-blue),
+    var(--light-royal-blue)
+  );
+  border-radius: 0 0 25px 25px;
+
+  @media (min-width: 700px) {
+    padding: 2rem 4rem;
+    border-radius: 25px;
+    row-gap: 1.5rem;
+    position: relative;
+    right: -20px;
+  }
+}
+
+h1 {
+  font-size: 1rem;
+  color: var(--light-lavender);
+}
+
+#score {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background-image: linear-gradient(
+    to bottom,
+    var(--violet-blue),
+    var(--persian-blue)
+  );
+  width: 120px;
+  height: 120px;
+
+  > div:nth-of-type(1) {
+    color: var(--white);
+    font-size: 3rem;
+    font-weight: 700;
+  }
+
+  > div:nth-of-type(2) {
+    color: hsla(241, 100%, 89%, 40%);
+    font-size: 0.875rem;
+    font-weight: 700;
+  }
+}
+
+#greetings {
+  color: var(--white);
+  font-size: 1.4rem;
+}
+
+p {
+  width: 30ch;
+  font-size: 0.95rem;
+  text-align: center;
+  color: var(--light-lavender);
+
+  @media (min-width: 700px) {
+    width: 25ch;
+  }
+}
+
+#summary {
+  margin-inline: 2rem;
+  display: flex;
+  flex-direction: column;
+  row-gap: 1rem;
+
+  @media (min-width: 700px) {
+    background-color: white;
+    border-radius: 0 25px 25px 0;
+    margin-inline: 0;
+    padding: 2rem 2rem 2rem calc(2rem + 20px); /* Extra 20px for overlap */
+  }
+}
+
+h2 {
+  font-size: 1.1rem;
+  color: var(--dark-gray-blue);
+}
+
+ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  row-gap: 0.875rem;
+}
+
+li {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.75rem;
+  border-radius: 10px;
+
+  > div:nth-of-type(1) {
+    display: flex;
+    column-gap: 0.5rem;
+    align-items: center;
+    font-size: 0.925rem;
+  }
+
+  > div:nth-of-type(2) {
+    display: flex;
+    font-size: 0.875rem;
+
+    > span:nth-of-type(1) {
+      font-weight: 700;
+    }
+
+    > span:nth-of-type(2) {
+      margin-inline: 5px 3px;
+    }
+
+    > span:nth-of-type(2),
+    span:nth-of-type(3) {
+      font-weight: 700;
+      color: hsl(224, 30%, 27%, 0.4);
+    }
+  }
+
+  @media (min-width: 700px) {
+    width: 30ch;
+  }
+}
+
+#reaction-summary {
+  background-color: hsl(var(--light-red) / 0.1);
+
+  > div:nth-of-type(1) > span {
+    color: hsl(var(--light-red));
+  }
+}
+
+#memory-summary {
+  background-color: hsl(var(--orangey-yellow) / 0.1);
+
+  > div:nth-of-type(1) > span {
+    color: hsl(var(--orangey-yellow));
+  }
+}
+
+#verbal-summary {
+  background-color: hsl(var(--green-teal) / 0.1);
+
+  > div:nth-of-type(1) > span {
+    color: hsl(var(--green-teal));
+  }
+}
+
+#visual-summary {
+  background-color: hsl(var(--cobalt-blue) / 0.1);
+
+  > div:nth-of-type(1) > span {
+    color: hsl(var(--cobalt-blue));
+  }
+}
+
+button {
+  padding: 0.875rem 0;
+  border-radius: 20px;
+  border: none;
+  background-color: var(--dark-gray-blue);
+  color: var(--white);
+  font-size: 1rem;
+}
