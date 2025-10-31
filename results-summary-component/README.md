@@ -5,4 +5,4 @@ This is a solution to the [Results summary component challenge on Frontend Mento
 ## Links
 
 - [Solution URL](https://github.com/ranmerc/frontendmentor-solutions/tree/main/results-summary-component)
-- [Live Site URL](https://ranmerc.github.io/frontendmentor-solutions/result-summary-component/)
+- [Live Site URL](https://ranmerc.github.io/frontendmentor-solutions/results-summary-component/)
